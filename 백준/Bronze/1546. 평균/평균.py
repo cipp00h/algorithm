@@ -1,9 +1,5 @@
 N = int(input())
-score = list(map(int, input().split()))
-M = max(score)  # 최고점
-sum = 0
-
-for n in score:
-    sum += n
-
-print(((sum / M) * 100) / N)
+score_list = list(map(int, input().split()))
+max_score = max(score_list)
+total_avg = sum(score / max_score * 100 for score in score_list) / N
+print(total_avg)
