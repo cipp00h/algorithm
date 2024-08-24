@@ -1,9 +1,10 @@
+import string
 S = input()
+alphabet_list = list(string.ascii_lowercase)
+result = [-1] * len(alphabet_list)
 
-alphabet_list = [i for i in range(97,123)]
+for i, c in enumerate(S):
+    if result[ord(c) - ord('a')] == -1:
+        result[ord(c) - ord('a')] = i
 
-for i in alphabet_list:
-    if chr(i) in S:
-        print(S.index(chr(i)), end=" ")
-    else:
-        print(-1, end=" ")
+print(' '.join(map(str, result)))
