@@ -1,3 +1,1 @@
-str = input()
-for c in str:
-    print(c)
+print(*input(), sep='\n')
